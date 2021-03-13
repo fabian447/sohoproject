@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sohofront</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div id="app">
+            <header class="contenedor full-portada">
+                <div class="menu-main">
+                    <a class="logo" href="#">
+                      <img src="img/logo-soho.png" alt="">
+                    </a>
+                    <nav class="main-nav">
+                        <a class="item active" href="#inicio">inicio</a>
+                        <a class="item" href="#nosotros">nosotros</a>
+                        <a class="item" href="#servicios">servicos</a>
+                        <a class="item" href="#casos">casos de exito </a>
+                        <a class="item" href="#unete">unete al equipo</a>
+                        <a class="item" href="#contacto">contanto</a>
+                    </nav>
+                </div>
+                  
+                <div class="full-description-center" id="inicio">
+                    <div>
+                        <h1 class="titulo">Nos especializamos en</h1>
+                        <h2 class="subtitulo verde">Interfaces digitales que los usuarios aman</h2>
+                        <a href="#" class="btn verde lg">Hablemos de tu proyecto</a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="banner-live contenedor">
+                    <i class="fas fa-broadcast-tower"></i> <b>EN DIRECTO</b> - SOHO está presente en el <b>DIGITALBANK MONTEVIDEO.</b> "Experiencia de Usuario" por Alvaro Añón (SEO de Soho). <span><a href="#" class="btn verde sm">Ver Evento</a> <a href="#" class="btn verde-bordeado sm">Próximos Eventos</a></span>
+            </section>
+
+            <section class="section-about contenedor" id="servicios">
+                <div>
+                    <h1 class="titulo">
+                        17 años de experiencia en pos de tu proyecto
+                    </h1>
+                    <hr class="verde"/>
+                    <p class="parrafo">Especializados desde 1996 en usabilidad, experiencia de usuario (UX) y diseño de experiencias de proyectos digitales. Aportamos estragia e innovación centrada en el usuario y los objetivos de negocio de tu proyecto. Cotrabajando mejoraremos tu tasa de conversión, KPI`s, ROI y los resultados de tu actual publicidad PPC (pay per click).</p>
+                </div>
+            </section>
+
+            <section class="section-box">
+                <div class="grid-item">
+                    <h1 class="titulo">Estrategia, usabilidad & ux</h1>
+                    <p class="parrafo">te ofrecemos excelente usabilidad y experiencia del usuario en tu proyecto junto a una visión innovadora</p>
+                </div>
+                <div class="grid-item">
+                    <h1 class="titulo">Mejoramos la experiencia</h1>
+                    <p class="parrafo">tangibilizamos tu proyecyo digital a través de un diseño centrado en el usuario y técnicas avanzadas</p>
+                </div>
+                <div class="grid-item">
+                    <h1 class="titulo">Medición continua de objetivos</h1>
+                    <p class="parrafo">Implementación, testing con usuarios y medición continua son necesarias para garatizar el éxito de tu proyecto</p>
+                </div>
+            </section>
+
+            <section class="section-project contenedor" id="casos">
+                <div>
+                    <h1 class="titulo">
+                        Proyectos destacados
+                    </h1>
+                    <hr class="verde"/>
+                    <p class="parrafo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis molestiae unde, impedit, rem facilis, reprehenderit illum numquam odio dolore obcaecati officiis quo quibusdam! Ea rerum, rem possimus facilis veniam quam!</p>
+                </div>
+            </section>
+            
+            <section class="project-items">   
+                <div class="item" v-for="(project, index) in projects" :style="{'background-color':project.background_color, 'color':project.font_color}">
+                    
+                    <div v-bind:class="{ 'orden_2' : !(index%2 == 0)}" class="img-presentacion">
+                        <img :src="baseUrl+project.image" alt="image">
+                    </div>
+                    <div v-bind:class="{ 'orden_1' : !(index%2 == 0)}" class="project-descripcion">
+                        <img :src="baseUrl+project.logo" class="img-logo" alt="logo">
+                        <hr class="blanco"/>
+                        <h1 class="titulo">{{project.name}}</h1>
+                        <p class="parrafo" :style="{'color':project.font_color}">{{project.description}}</p>
+                        <div class="tag"  ><i class="fas fa-tag"></i> <a :href="'#'+tag" v-for="tag in project.tags" :style="{'color':project.font_color}">{{tag}}</a></div>
+                        <a :href="project.url" class="btn blanco sm" :style="{'background-color':project.font_color, 'color':project.background_color}" >VER DETALLES</a>
+                    </div>
+                </div>   
+            </section>
+
+            <footer id="contacto">
+                <div class="icon"><i class="fas fa-map-marker"></i><i class="fas fa-plus"></i></div>
+                <div class="info">
+                    <span class="grid-item">
+                        <b>© 2017</b> SOHO internet + Humana
+                    </span>
+                    <div class="grid-item">
+                        <a class="link-footer" href="#">
+                            Visitanos
+                        </a>
+                        <a class="link-footer" href="#">
+                            Escribenos
+                        </a>
+                        <a class="link-footer" href="#">
+                            Llámanos
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a class="link-fb" href="#">
+                            Facebook
+                        </a>
+                        <a class="link-twt" href="#">
+                            Twitter
+                        </a>
+                        <a class="link-li" href="#">
+                            Linkedin
+                        </a>
+                        <a class="link-yt" href="#">
+                            Youtube
+                        </a>
+                    </div>
+                </div>
+
+            </footer>
+
+
+        </div>
+    
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+        <script>
+            const app = new Vue({
+                'el': '#app',
+                data: {
+                    projects: [],
+                    alter: false,
+                    baseUrl: 'http://sohoback.test/'
+
+                },
+
+                mounted(){
+                    this.getProjects();
+                },
+
+                methods:{
+                    getProjects(){
+                        axios.get(this.baseUrl+'api/projects').then( res => {
+                            this.projects = res.data;
+                            this.projects.forEach(element => {
+                                element.tags = element.tags.split(',');
+                            });
+                        })
+                    }
+
+                }
+
+
+            })
+        </script>
+    </body>
+</html>
